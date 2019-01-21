@@ -53,8 +53,9 @@ export class AlgoliaSearchComponent implements AfterViewInit  {
 
   toggle(val) {
     this.visible = val;
-    // Focus the input element
-    this.searchInput.nativeElement.focus();
+    // Focus the input element only when toggled on
+    if (val)
+      this.searchInput.nativeElement.focus();
     this.cd.detectChanges();
   }
 
